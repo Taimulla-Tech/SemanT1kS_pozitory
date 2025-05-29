@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: ghostwhite;
+}
+
+.header{
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav a {
+   text-decoration: none;
+    color: white;
+    font-size: 23px; /* Добавляем начальный размер */
+    transition: all 0.3s ease; /* Переносим transition сюда */
+    display: inline-block; /* Для плавного изменения размеров */
+}
+
+.nav a:hover {
+    color: darkgray;
+    font-size: 25px;
+    transition-duration: 0.3s;
+}
+
+.nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+.nav li {
+    display: inline-block;
+    font-size: 23px;
+}
+
+.h1 {
+    padding: 15px;
+    text-align: center;
+}
+
+.p {
+    font-size: 23px;
+    font-weight: 650;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+
+@media (max-width: 550px) {
+            .nav ul {
+                gap: 10px;
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .nav a {
+                font-size: 18px;
+            }
+
+            .p {
+                font-size: 19px;
+            }
+}
+
+.container {
+    background-color: cadetblue;
+    padding: 20px;
+}
+
+.article {
+    display: flex;          /* Делаем article flex-контейнером */
+    flex-wrap: wrap;        /* Разрешаем перенос если не хватает места */
+    gap: 20px;             /* Расстояние между элементами */
+}
+
+.h2 {
+    padding: 15px;
+    color: white;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin: 0;             /* Убираем отступы */
+    flex: 1;               /* Равномерно распределяем пространство */
+    max-width: 270px;  
+}
+
+.h2v {
+    padding: 15px;
+    color: white;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    margin: 0;             /* Убираем отступы */
+    flex: 1;               /* Равномерно распределяем пространство */
+    max-width: 300px;      /* Минимальная ширина */
+    margin-left: 50px;
+}
+
+@media (max-width: 550px) {
+    /* Убираем column направление */
+    .article {
+        flex-direction: row; /* Оставляем горизонтальное направление */
+        overflow-x: auto; /* Добавляем горизонтальную прокрутку при необходимости */
+        flex-wrap: nowrap; /* Запрещаем перенос на новую строку */
+        padding-bottom: 15px; /* Отступ для скролла */
+    }
+    
+    /* Фиксируем ширину элементов для мобильных */
+    .h2, .h2v {
+        flex: 0 0 auto; /* Отключаем растягивание */
+        width: 280px; /* Фиксированная ширина */
+        margin-left: 0; /* Убираем отступ слева */
+        font-size: 18px; /* Уменьшаем шрифт */
+        white-space: normal; /* Разрешаем перенос текста */
+    }
+    
+    /* Стиль для скролла (опционально) */
+    .article::-webkit-scrollbar {
+        height: 7px;
+    }
+    .article::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+    }
+}
+
+.img {
+    width: 300px;
+    height: 300px;
+    margin-left: 40px;
+    flex-direction: row;
+}
